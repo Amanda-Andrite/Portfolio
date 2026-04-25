@@ -1,5 +1,4 @@
 <script>
-//empty
 </script>
 
 <header class="header">
@@ -9,7 +8,7 @@
 			<a href="contacts">Contacts</a>
 		</div>
 		<div class="logo">
-			<p> Logo </p>
+			<p>Logo</p>
 		</div>
 		<div class="nav-right">
 			<a href="work">My Work</a>
@@ -28,7 +27,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
-		padding: 1rem 2rem; 
+		padding: 1rem 2rem;
 	}
 
 	.nav-left,
