@@ -4,15 +4,15 @@
 <header class="header">
 	<nav class="nav-bar">
 		<div class="nav-left">
-			<a href="skills">My Skills</a>
-			<a href="contacts">Contacts</a>
+			<p>My Skills</p>
+			<p>Contacts</p>
 		</div>
 		<div class="logo">
 			<p>Logo</p>
 		</div>
 		<div class="nav-right">
-			<a href="work">My Work</a>
-			<a href="qa">Q/A</a>
+			<p>My Work</p>
+			<p>Q/A</p>
 		</div>
 	</nav>
 </header>
@@ -41,7 +41,7 @@
 		font-size: 1.5rem;
 	}
 
-	.nav-bar a {
+	.nav-bar p {
 		text-decoration: none;
 		color: var(--text-primary);
 		font-family: var(--font-button);
