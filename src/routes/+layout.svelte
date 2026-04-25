@@ -25,15 +25,10 @@
 		background-color: var(--background-primary);
 		color: var(--text-primary);
 		font-family: var(--font-body);
-		border-radius: 5px;
-		border-color: var(--divider-color);
-		border-width: 1px;
-		border-style: solid;
 	}
 
 	main {
 		flex: 1;
-
 		width: 100%;
 		background-color: var(--background-primary);
 		display: flex;
@@ -51,7 +46,7 @@
 		bottom: 0;
 		min-height: 100%;
 		width: 100%;
-		background-color: var(--background-primary); 
+		background-color: var(--background-primary);
 		background-position: center top;
 		opacity: 0.66;
 		z-index: -1;

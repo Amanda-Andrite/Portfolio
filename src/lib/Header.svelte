@@ -1,18 +1,19 @@
 <script>
+	import { resolve } from '$app/paths';
 </script>
 
 <header class="header">
 	<nav class="nav-bar">
 		<div class="nav-left">
-			<p>My Skills</p>
-			<p>Contacts</p>
+			<a href={resolve('/skills')}>My Skills</a>
+			<a href={resolve('/contact')}>Contacts</a>
 		</div>
 		<div class="logo">
-			<p>Logo</p>
+			<a href={resolve('/')}>Logo</a>
 		</div>
 		<div class="nav-right">
-			<p>My Work</p>
-			<p>Q/A</p>
+			<a href={resolve('/work')}>My Work</a>
+			<a href={resolve('/qs')}>Q/A</a>
 		</div>
 	</nav>
 </header>
@@ -21,9 +22,14 @@
 	.header {
 		width: fit-content;
 		margin: 0 auto;
+		position: relative;
+		top: 0;
 	}
 
 	.nav-bar {
+		width: 100%;
+		height: 60px;
+		background-color: var(--background-secondary);
 		display: flex;
 		align-items: center;
 		gap: 2rem;
@@ -41,7 +47,7 @@
 		font-size: 1.5rem;
 	}
 
-	.nav-bar p {
+	.nav-bar a {
 		text-decoration: none;
 		color: var(--text-primary);
 		font-family: var(--font-button);

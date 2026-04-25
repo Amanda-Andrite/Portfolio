@@ -11,6 +11,8 @@ html, body {
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--background-primary);
+    margin: 0;
+	padding: 0;
 }
 
 a {
@@ -43,22 +45,13 @@ table {
 
 @font-face {
     font-family: "Unlock";
-    src: url("%sveltekit.assets%/fonts/Unlock.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    src: url("../fonts/unlock.ttf") format("truetype");
 }
 @font-face {
     font-family: "Atkinson Hyperlegible";
-    src: url("%sveltekit.assets%/fonts/Atkinson-Hyperlegible-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    src: url("../fonts/atkinson-hyperlegible.otf") format("opentype");
 }
 @font-face {
     font-family: "WinkySans";
-    src: url("%sveltekit.assets%/fonts/WinkySans.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+    src: url("../fonts/winkysans.ttf") format("truetype");
 }

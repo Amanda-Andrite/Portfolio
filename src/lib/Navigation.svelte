@@ -1,30 +1,34 @@
 <script>
-//temp to remove warning about unused component
-/** @type {{ name: string; path: string }[]} */
-	let navigationItems = [];
+	//temp to remove warning about unused component
+	let navigationItems = [
+		{ name: 'My Skills', path: '/skills' },
+		{ name: 'Contacts', path: '/contact' },
+		{ name: 'My Work', path: '/work' },
+		{ name: 'Q/A', path: '/qs' }
+	];
 	let isOpen = false;
 </script>
 
 {#if navigationItems.length > 0}
-<nav class="nav" aria-label="Main navigation">
-    <button
-        class="burger"
-        on:click={() => (isOpen = !isOpen)}
-        aria-label="Toggle navigation menu"
-        aria-expanded={isOpen}
-        aria-controls="main-menu"
-    >
-        ☰
-    </button>
+	<nav class="nav" aria-label="Main navigation">
+		<button
+			class="burger"
+			on:click={() => (isOpen = !isOpen)}
+			aria-label="Toggle navigation menu"
+			aria-expanded={isOpen}
+			aria-controls="main-menu"
+		>
+			☰
+		</button>
 
-    <ul id="main-menu" class:open={isOpen}>
-        {#each navigationItems as item}
-            <li class="nav-item">
-                <a href={item.path}>{item.name}</a>
-            </li>
-        {/each}
-    </ul>
-</nav>
+		<ul id="main-menu" class:open={isOpen}>
+			{#each navigationItems as item}
+				<li class="nav-item">
+					<a href={item.path}>{item.name}</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
 {/if}
 
 <style>
