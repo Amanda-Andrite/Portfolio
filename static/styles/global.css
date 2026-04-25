@@ -43,21 +43,21 @@ table {
 
 @font-face {
     font-family: "Unlock";
-    src: url("/fonts/Unlock.ttf") format("TrueType");
+    src: url("%sveltekit.assets%/fonts/Unlock.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Atkinson Hyperlegible";
-    src: url("/fonts/Atkinson-Hyperlegible-Regular.otf") format("opentype");
+    src: url("%sveltekit.assets%/fonts/Atkinson-Hyperlegible-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "WinkySans";
-    src: url("/fonts/WinkySans.ttf") format("TrueType");
+    src: url("%sveltekit.assets%/fonts/WinkySans.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
