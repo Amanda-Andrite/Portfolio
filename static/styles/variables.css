@@ -1,0 +1,37 @@
+:root {
+    /* Colors */
+    --background-primary: #fbf4f0; /* Main background color */
+    --background-secondary: #b09981;
+    --background-tertiary: #553e26;
+    --divider-color: #3e2c1a;
+
+    --color-white: #f0f0f0;
+    --color-accent: #395f0b;
+    --color-button: #4a331b;
+
+    --text-primary: #332312;/*Dark on light background*/
+    --text-secondary: #f0f0f0;/*Light on dark background*/
+
+    /* Typography */
+    --font-body: "Atkinson Hyperlegible", system-ui, sans-serif;
+    --font-heading: "Unlock", system-ui, sans-serif;
+    --font-button: "WinkySans", monospace;
+
+    /* Font Sizes */
+    --font-base: 1rem;
+    --font-sm: 0.875rem;
+    --font-lg: 1.25rem;
+
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    --card-padding: 20px;
+    --card-radius: 12px;
+    --gap-lg: 30px;
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+}

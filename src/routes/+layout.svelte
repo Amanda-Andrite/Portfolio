@@ -1,0 +1,65 @@
+<script>
+	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
+</script>
+
+<div id="layout-container">
+	<!-- Header -->
+	<Header />
+
+	<!-- Page Content -->
+	<main id="main-content" tabindex="-1">
+		<slot />
+	</main>
+
+	<!-- Footer -->
+	<Footer />
+</div>
+
+<style>
+	#layout-container {
+		display: flex;
+		flex-direction: column;
+		height: 1vh;
+		min-height: 100vh;
+		background-color: var(--background-primary);
+		color: var(--text-primary);
+		font-family: var(--font-body);
+		border-radius: 5px;
+		border-color: var(--divider-color);
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	main {
+		flex: 1;
+
+		width: 100%;
+		background-color: var(--background-primary);
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		isolation: isolate;
+	}
+
+	main::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		min-height: 100%;
+		width: 100%;
+		background-color: var(--background-primary); 
+		background-position: center top;
+		opacity: 0.66;
+		z-index: -1;
+	}
+
+	@media (max-width: 768px) {
+		main {
+			padding: var(--space-lg) var(--space-md);
+		}
+	}
+</style>
