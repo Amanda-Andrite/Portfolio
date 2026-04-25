@@ -5,15 +5,15 @@
 <header class="header">
 	<nav class="nav-bar">
 		<div class="nav-left">
-			<a href="#skills">My Skills</a>
-			<a href="#contacts">Contacts</a>
+			<a href="skills">My Skills</a>
+			<a href="contacts">Contacts</a>
 		</div>
 		<div class="logo">
 			<p> Logo </p>
 		</div>
 		<div class="nav-right">
-			<a href="#work">My Work</a>
-			<a href="#qa">Q/A</a>
+			<a href="work">My Work</a>
+			<a href="qa">Q/A</a>
 		</div>
 	</nav>
 </header>
