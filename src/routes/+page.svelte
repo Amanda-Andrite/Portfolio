@@ -133,11 +133,13 @@
 		width: 100%;
 		max-width: 1400px;
 		padding: 0 4rem;
+		flex-wrap: wrap;
 	}
 
 	.image-placeholder {
 		width: 450px;
 		height: 580px;
+		aspect-ratio: 3 / 4;
 		border-radius: var(--card-radius);
 		background: var(--background-tertiary);
 		display: flex;
@@ -179,6 +181,7 @@
 		width: 100%;
 		max-width: 500px;
 		height: 450px;
+		min-height: 250px;
 		background-color: var(--background-primary);
 		padding: 0.8rem;
 		border-radius: var(--card-radius);
@@ -202,11 +205,11 @@
 	/*grid background*/
 	.links {
 		background-color: var(--background-primary);
-		padding: 6rem 2rem 4rem; 
+		padding: 3rem 2rem 4rem;
 		background-image:
-			linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),/*vertical lines*/
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);/*horizontal lines*/
-		background-size: 40px 40px;/*grid size*/
+			linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+			/*vertical lines*/ linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px); /*horizontal lines*/
+		background-size: 40px 40px; /*grid size*/
 	}
 
 	.links-container {
@@ -220,11 +223,11 @@
 	.circle {
 		position: absolute;
 		display: flex;
-		flex-direction: column; 
+		flex-direction: column;
 		align-items: center;
 		gap: 0.5rem;
 		cursor: pointer;
-		text-decoration: none; 
+		text-decoration: none;
 		color: inherit;
 	}
 
@@ -266,6 +269,152 @@
 
 	/* Accessibility, styles for keyboard nav */
 	.circle:focus-visible .circle-shape {
-		outline: 3px solid var(--color-button);	
+		outline: 3px solid var(--color-button);
+	}
+
+	/* Responsive styles */
+	@media (max-width: 768px) {
+		/* intro section */
+		.intro {
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 2rem 1.5rem;
+			gap: 1.5rem;
+		}
+
+		.intro-content {
+			max-width: 100%;
+		}
+
+		h1 {
+			font-size: 2rem;
+			line-height: 1.2;
+		}
+
+		p {
+			font-size: 1rem;
+		}
+
+		button {
+			width: 100%;
+			max-width: 220px;
+		}
+	
+		/* about section */
+		.about-container {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding: 0 1.5rem;
+			gap: 2rem;
+		}
+
+		.about-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			order: 0;
+			gap: 1rem;
+		}
+
+		.image-placeholder {
+			max-width: 350px;
+			width: 100%;
+			height: 375px;
+		}
+		.about-card {
+			order: 2;
+			width: min(450px, 70vw);
+			height: 375px;
+			padding: 1rem;
+		}
+
+		.about-title {
+			font-size: 1.8rem;
+			padding: 0.4rem 1rem;
+		}
+
+		/* links section */
+		.links-container {
+			transform: scale(0.8);
+			transform-origin: center;
+			height: 400px; 
+		}
+
+		.circle {
+			gap: 0.4rem;
+		}
+
+		.circle-shape {
+			width: 150px;
+			height: 150px;
+		}
+
+		.circle span {
+			font-size: 0.85rem;
+		}
+
+		.circle-1 {
+			left: -70px;
+			bottom: 25px;
+		}
+
+		.circle-2 {
+			left: 8%;
+			top: 10px;
+		}
+
+		.circle-3 {
+			right: 8%;
+			top: 10px;
+		}
+
+		.circle-4 {
+			right: -70px;
+			bottom: 25px;
+		}
+	}
+
+	/* Further adjustments for very small screens */
+	@media (max-width: 480px) {
+		.links-container {
+			transform: scale(0.8);
+			transform-origin: center;
+			height: 400px; 
+		}
+
+		.circle {
+			gap: 0.4rem;
+		}
+
+		.circle-shape {
+			width: 140px;
+			height: 140px;
+		}
+
+		.circle span {
+			font-size: 0.85rem;
+		}
+
+		.circle-1 {
+			left: -70px;
+			bottom: 25px;
+		}
+
+		.circle-2 {
+			left: 3%;
+			top: 10px;
+		}
+
+		.circle-3 {
+			right: 3%;
+			top: 10px;
+		}
+
+		.circle-4 {
+			right: -70px;
+			bottom: 25px;
+		}
 	}
 </style>

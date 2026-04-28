@@ -51,6 +51,31 @@
 		text-decoration: none;
 		color: var(--text-primary);
 		font-family: var(--font-button);
-		font-size: 1.1rem;
+		font-size: 1.9rem;
+	}
+
+	@media (max-width: 768px) {
+		.header {
+			transform: scale(0.85);
+			transform-origin: top center;
+		}
+
+		.nav-bar {
+			gap: 4rem;
+			padding: 0.8rem 1.2rem;
+		}
+		
+		.nav-left,
+		.nav-right {
+			gap: 1rem;
+		}
+
+		.logo {
+			font-size: 1.3rem;
+		}
+
+		.nav-bar a {
+			font-size: 0.95rem;
+		}
 	}
 </style>
