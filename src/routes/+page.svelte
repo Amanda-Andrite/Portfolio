@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -37,6 +38,30 @@
 					<p class="about-email">@email.com</p>
 				</div>
 			</article>
+		</div>
+	</section>
+
+	<div class="primary-divider"></div>
+	<div class="secondary-divider"></div>
+
+	<section class="links">
+		<div class="links-container">
+			<a href={resolve('/skills')} class="circle circle-1" aria-label="Go to My Skills page">
+				<div class="circle-shape"></div>
+				<span>My Skills</span>
+			</a>
+			<a href={resolve('/contact')} class="circle circle-2" aria-label="Go to Contact page">
+				<div class="circle-shape"></div>
+				<span>Contacts</span>
+			</a>
+			<a href={resolve('/work')} class="circle circle-3" aria-label="Go to My Work page">
+				<div class="circle-shape"></div>
+				<span>My Work</span>
+			</a>
+			<a href={resolve('/qs')} class="circle circle-4" aria-label="Go to Q/A page">
+				<div class="circle-shape"></div>
+				<span>Q/A</span>
+			</a>
 		</div>
 	</section>
 </main>
@@ -172,5 +197,75 @@
 		font-size: var(--font-sm);
 		text-align: center;
 		color: var(--text-primary);
+	}
+
+	/*grid background*/
+	.links {
+		background-color: var(--background-primary);
+		padding: 6rem 2rem 4rem; 
+		background-image:
+			linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),/*vertical lines*/
+			linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);/*horizontal lines*/
+		background-size: 40px 40px;/*grid size*/
+	}
+
+	.links-container {
+		position: relative;
+		width: 100%;
+		max-width: 900px;
+		height: 400px;
+		margin: 0 auto;
+	}
+
+	.circle {
+		position: absolute;
+		display: flex;
+		flex-direction: column; 
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		text-decoration: none; 
+		color: inherit;
+	}
+
+	.circle-shape {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		border: 3px solid #5a4634;
+		background-color: transparent;
+		transition: transform 0.2s ease;
+	}
+
+	.circle:hover .circle-shape {
+		transform: scale(1.05); /*Responsive hover effect */
+	}
+
+	/* Position the circles */
+	.circle span {
+		font-family: var(--font-button);
+		font-size: 1rem;
+	}
+
+	.circle-1 {
+		left: 0;
+		bottom: 40px;
+	}
+	.circle-2 {
+		left: 25%;
+		top: 0;
+	}
+	.circle-3 {
+		right: 25%;
+		top: 0;
+	}
+	.circle-4 {
+		right: 0;
+		bottom: 40px;
+	}
+
+	/* Accessibility, styles for keyboard nav */
+	.circle:focus-visible .circle-shape {
+		outline: 3px solid var(--color-button);	
 	}
 </style>

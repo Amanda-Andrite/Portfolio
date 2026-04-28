@@ -6,7 +6,7 @@
 <style>
     .footer {
         width: 100%;
-        padding: var(--space-md);
+        padding: 70px 0;
         text-align: center;
         font-family: var(--font-body);
         font-size: var(--font-sm);
