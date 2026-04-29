@@ -51,7 +51,7 @@
 		text-decoration: none;
 		color: var(--text-primary);
 		font-family: var(--font-button);
-		font-size: 1.9rem;
+		font-size: 1.1rem;
 	}
 
 	@media (max-width: 768px) {
