@@ -13,6 +13,7 @@
 
 <section class="skills">
 	<h2>Tools I Use</h2>
+	<div class="divider"></div>
 	<div class="grid">
 		{#each skills as skill}
 			<div class="card" role="button" tabindex="0">
@@ -38,6 +39,12 @@
 		margin-bottom: var(--space-md);
 		font-family: var(--font-heading);
 		color: var(--text-primary);
+	}
+
+	.divider {
+		height: 2px;
+		background: var(--divider-color);
+		margin-bottom: var(--space-lg);
 	}
 
 	.grid {
