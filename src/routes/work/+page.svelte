@@ -24,29 +24,31 @@
 <style>
 	.page {
 		min-height: 100vh;
-		padding: 3rem;
+		padding: var(--space-lg);
 		background: var(--background-primary);
-		font-family: system-ui, sans-serif;
+		font-family: var(--font-body);
 		text-align: center;
 	}
 
 	h1 {
 		font-size: 3rem;
-		margin-bottom: 3rem;
+		margin-bottom: var(--space-lg);
 		color: var(--text-primary);
+		font-family: var(--font-heading);
 	}
 
 	.grid {
 		display: flex;
 		justify-content: center;
 		align-items: flex-start;
-		gap: 2.5rem;
+		gap: var(--gap-lg);
 	}
 
 	.polaroid {
 		background: #ffff;
-		padding: 1rem 1rem 1.5rem 1rem;
-		width: 260px;
+		padding: var(--card-padding);
+		width: 270px;
+		height: 330px;
 		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 		transition: transform 0.55s ease;
 	}
@@ -59,13 +61,14 @@
 	.frame {
 		background: var(--background-tertiary);
 		padding: 0.5rem;
-		height: 200px;
+		height: 250px;
 	}
 
 	p {
-		margin-top: 1rem;
+		margin-top: var(--space-md);
 		font-weight: bold;
 		color: var(--text-primary);
+		font-family: var(--font-button);
 	}
 
 	.left {
@@ -89,12 +92,17 @@
 		.grid {
 			flex-direction: column;
 			align-items: center;
-			gap: 3rem;
+			gap: var(--space-lg);
 		}
 
 		.polaroid {
 			width: 240px;
+			height: 290px;
 			transition: transform 0.55s ease;
+		}
+
+		.frame {
+			height: 200px;
 		}
 
 		.left {

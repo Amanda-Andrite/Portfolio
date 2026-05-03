@@ -60,8 +60,8 @@
 		background: var(--background-secondary);
 		padding: var(--card-padding);
 		border-radius: var(--card-radius);
-		width: 260px;
-		height: 300px;
+		width: 220px;
+		height: 270px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -94,5 +94,28 @@
 		height: 300px;
 		background-color: var(--background-secondary);
 		margin: 0;
+	}
+
+	@media (max-width: 600px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: var(--space-md);
+			padding: 0 var(--space-sm);
+		}
+
+		.card {
+			width: 100%;
+			max-width: 220px;
+			height: 240px;
+			margin: 0 auto;
+		}
+
+		.image-box {
+			height: 180px;
+		}
+
+		.name {
+			font-size: 1rem;
+		}
 	}
 </style>
