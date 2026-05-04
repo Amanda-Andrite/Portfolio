@@ -1,20 +1,52 @@
 <script>
 	import { resolve } from '$app/paths';
 	import { contactInfoOpen } from '$lib/stores/contact.js';
+
+	//Issues with trying to import pages, so active link state is handled manually instead
+	let activeLink = '';
 </script>
 
 <header class="header">
 	<nav class="nav-bar">
 		<div class="nav-left">
-			<a href={resolve('/skills')}>My Skills</a>
-			<a href="#top" on:click|preventDefault={() => contactInfoOpen.set(true)}> Contacts </a>
+			<a
+				href={resolve('/skills')}
+				class:active={activeLink === '/skills'}
+				on:click={() => (activeLink = '/skills')}
+			>
+				My Skills
+			</a>
+			<a
+				href="#top"
+				on:click|preventDefault={() => {
+					contactInfoOpen.set(true);
+					activeLink = 'contacts';
+				}}
+				class:active={activeLink === 'contacts'}
+			>
+				Contacts
+			</a>
 		</div>
 		<div class="logo">
-			<a href={resolve('/')}>Logo</a>
+			<a href={resolve('/')} on:click={() => (activeLink = '/')} class:active={activeLink === '/'}>
+				<img src="./icons/logo1.png" alt="Logo" />
+			</a>
 		</div>
 		<div class="nav-right">
-			<a href={resolve('/work')}>My Work</a>
-			<a href={resolve('/qs')}>Q/A</a>
+			<a
+				href={resolve('/work')}
+				on:click={() => (activeLink = '/work')}
+				class:active={activeLink === '/work'}
+				>My Work
+			</a>
+
+			<a
+				href={resolve('/qs')}
+				on:click={() => (activeLink = '/qs')}
+				class:active={activeLink === '/qs'}
+			>
+				QA
+			</a>
 		</div>
 	</nav>
 </header>
@@ -31,6 +63,10 @@
 		width: 100%;
 		height: 60px;
 		background-color: var(--background-secondary);
+		border-left: 2px dashed var(--background-tertiary);
+		border-right: 2px dashed var(--background-tertiary);
+		border-bottom: 2px dashed var(--background-tertiary);
+		border-radius: 10px;
 		display: flex;
 		align-items: center;
 		gap: 2rem;
@@ -43,16 +79,43 @@
 		gap: 1.5rem;
 	}
 
-	.logo {
-		margin: 0 2rem;
-		font-size: 1.5rem;
+	.logo img {
+		width: 50px;
+		height: 50px;
+		object-fit: contain;
+		display: block;
+		transform: translateY(3px);
 	}
 
 	.nav-bar a {
+		position: relative;
+		display: inline-block;
 		text-decoration: none;
 		color: var(--text-primary);
 		font-family: var(--font-button);
 		font-size: 1.1rem;
+		padding: 0.3rem 0.6rem;
+		border-radius: 999px;
+		transition: all 0.2s ease;
+	}
+
+	.nav-bar a:hover {
+		transform: scale(1.1);
+	}
+
+	.logo a:hover {
+		transform: scale(1.1);
+	}
+
+	.nav-bar a.active {
+		color: #ffff;
+		background-color: var(--background-tertiary);
+	}
+
+	.nav-bar a.active::before {
+		position: absolute;
+		background-color: var(--background-tertiary);
+		border-radius: 90px;
 	}
 
 	@media (max-width: 768px) {
@@ -62,17 +125,17 @@
 		}
 
 		.nav-bar {
-			gap: 4rem;
-			padding: 0.8rem 1.2rem;
+			gap: 1.2rem;
+			padding: 0.8rem 1rem;
 		}
 
 		.nav-left,
 		.nav-right {
-			gap: 1rem;
+			gap: 0.8rem;
 		}
 
-		.logo {
-			font-size: 1.3rem;
+		.logo img {
+			margin: 0 0.8rem;
 		}
 
 		.nav-bar a {
