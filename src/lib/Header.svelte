@@ -1,6 +1,7 @@
 <script>
 	import { resolve } from '$app/paths';
 	import { contactInfoOpen } from '$lib/stores/contact.js';
+	import { base } from '$app/paths';
 
 	//Issues with trying to import pages, so active link state is handled manually instead
 	let activeLink = '';
@@ -29,7 +30,7 @@
 		</div>
 		<div class="logo">
 			<a href={resolve('/')} on:click={() => (activeLink = '/')} class:active={activeLink === '/'}>
-				<img src="./icons/logo1.png" alt="Logo" />
+				<img src="{base}/icons/logo1.png" alt="Logo" />
 			</a>
 		</div>
 		<div class="nav-right">

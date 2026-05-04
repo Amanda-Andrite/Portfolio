@@ -1,7 +1,11 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <footer class="footer">
 	<div class="footer-top">
 		<div class="footer-left">
-			<img src="./icons/logo1.png" alt="Logo" class="footer-logo" />
+			<img src="{base}/icons/logo1.png" alt="Logo" class="footer-logo" />
 
 			<div class="contact">
 				<p><strong>Email:</strong> email@email.com</p>
@@ -88,7 +92,7 @@
 
 		.copyright {
 			align-self: flex-start;
-            font-size: 10px;
+			font-size: 10px;
 		}
 	}
 </style>
