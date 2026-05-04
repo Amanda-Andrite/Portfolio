@@ -1,13 +1,13 @@
 <script>
+	import { base } from '$app/paths';
+
 	//data for skills page
 	const skills = [
-		'Visual Studio Code',
-		'Adobe Photoshop',
-		'GitHub',
-		'Blender',
-		'JavaScript',
-		'C++',
-		'Figma'
+		{ name: 'Visual Studio Code', img: `${base}/imgs/vscode.png` },
+		{ name: 'Adobe Photoshop', img: `${base}/imgs/adobe.png` },
+		{ name: 'GitHub', img: `${base}/imgs/github.png` },
+		{ name: 'Blender', img: `${base}/imgs/blender.png` },
+		{ name: 'Figma', img: `${base}/imgs/figma.png` }
 	];
 </script>
 
@@ -17,21 +17,34 @@
 	<div class="grid">
 		{#each skills as skill}
 			<div class="card" role="button" tabindex="0">
-				<div class="image-box"></div>
-				<div class="name">{skill}</div>
+				<div class="image-box">
+					<img src={skill.img} alt={skill.name} />
+				</div>
+				<div class="name">{skill.name}</div>
 			</div>
 		{/each}
 	</div>
+	<div class="section-divider"></div>
+	<section class="qualifications">
+		<h2>Qualifications</h2>
+		<div class="divider"></div>
 
-	<div class="primary-divider"></div>
-	<div class="secondary-divider"></div>
+		<div class="qualification-list">
+			<div class="qualification-box">Game Design: Practical Unity Development - FutureLearn</div>
+		</div>
+	</section>
 </section>
 
 <style>
 	.skills {
-		padding: var(--space-sm);
+		background: var(--background-primary);
+		padding: var(--space-sm) 0;
 		text-align: center;
-		padding-bottom: var(--space-lg);
+	}
+
+	.qualifications {
+		background: var(--background-secondary);
+		padding: var(--space-md);
 	}
 
 	h2 {
@@ -66,6 +79,14 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+		transition:
+			transform 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.card:hover {
+		transform: scale(1.01);
+		box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 	}
 
 	.image-box {
@@ -73,6 +94,17 @@
 		height: 230px;
 		background: var(--background-primary);
 		border-radius: var(--radius-md);
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.image-box img {
+		width: 70%;
+		height: 70%;
+		object-fit: contain;
+		transition: transform 0.3s ease;
 	}
 
 	.name {
@@ -84,16 +116,25 @@
 		margin-top: var(--space-sm);
 	}
 
-	.primary-divider {
+	.section-divider {
 		height: 30px;
-		background-color: var(--background-tertiary);
+		background-color: var(--divider-color);
 		margin: 0;
 	}
 
-	.secondary-divider {
-		height: 300px;
-		background-color: var(--background-secondary);
-		margin: 0;
+	.qualification-list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		align-items: center;
+	}
+
+	.qualification-box {
+		background: white;
+		padding: 10px 15px;
+		border-radius: 8px;
+		width: 60%;
+		text-align: center;
 	}
 
 	@media (max-width: 600px) {
@@ -117,5 +158,6 @@
 		.name {
 			font-size: 1rem;
 		}
+
 	}
 </style>

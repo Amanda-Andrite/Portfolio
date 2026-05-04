@@ -29,6 +29,7 @@
 		background-color: var(--background-tertiary);
 		position: relative;
 		z-index: 10;
+		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 	}

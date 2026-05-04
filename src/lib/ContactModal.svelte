@@ -21,6 +21,7 @@
 			on:click|stopPropagation
 		>
 			<h2>Contact Info</h2>
+			<h3>Amanda Andrite</h3>
 			<p><strong>Email:</strong> email@email.com</p>
 			<p><strong>Phone:</strong> +number</p>
 			<p><strong>Insta:</strong> email@email.com</p>
