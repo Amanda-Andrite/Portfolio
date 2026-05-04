@@ -9,18 +9,27 @@
 
 <main class="page">
 	<section class="intro">
-		<header class="intro-content">
-			<h1>Meet the creative mind behind the screen.</h1>
-			<p>
-				I design and develop websites that balance aesthetics with functionality, bringing bold
-				ideas to life through purposeful design and clean, efficient code.
-			</p>
-			<p>
-				My websites dont just look good, they perform. From concept to launch, I craft experiences
-				that are intuitive, responsive, and built to last.
-			</p>
-			<button on:click={() => contactInfoOpen.set(true)}> Contact Me </button>
-		</header>
+		<div class="intro-board">
+			<div class="intro-paper">
+				<header class="intro-content">
+					<h1>Meet the creative mind behind the screen.</h1>
+					<p>
+						I design and develop websites that balance aesthetics with functionality, bringing bold
+						ideas to life through purposeful design and clean, efficient code.
+					</p>
+					<p>
+						My websites dont just look good, they perform. From concept to launch, I craft
+						experiences that are intuitive, responsive, and built to last.
+					</p>
+					<button on:click={() => contactInfoOpen.set(true)}> Contact Me </button>
+				</header>
+			</div>
+			<div class="sticky-notes">
+				<div class="sticky-note note-1"><p>Design with purpose</p></div>
+				<div class="sticky-note note-2"><p>Design with purpose</p></div>
+				<div class="sticky-note note-3"><p>Design with purpose</p></div>
+			</div>
+		</div>
 	</section>
 
 	<div class="primary-divider"></div>
@@ -73,14 +82,39 @@
 		flex-direction: column;
 	}
 
+	.intro-board {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+		flex-wrap: wrap;
+		position: relative;
+	}
+
+	.intro-paper {
+		background: white;
+		padding: 1rem;
+		max-width: 530px;
+		border-radius: 8px;
+		transform: translateY(-10px) rotate(-1deg);
+		box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.15);
+	}
+
 	.intro {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-left: 4rem;
-		padding-right: 2rem;
-		margin-bottom: 0;
-		padding-bottom: 3rem;
+		padding: 1rem 2rem;
+		background-image:
+			linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+			linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
+		background-size: 50px 50px;
+		border: 2px solid var(--background-tertiary);
+		border-radius: 12px;
+		max-width: 1300px;
+		margin: 2rem auto;
+		position: relative;
+		overflow: hidden;
 	}
 
 	.intro-content {
@@ -97,11 +131,51 @@
 		font-size: 1.2rem;
 	}
 
+	.sticky-notes {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		z-index: 5;
+		margin-top: 2rem; 
+		margin-left: 1.5rem;
+	}
+
+	.sticky-note {
+		width: 160px;
+		min-height: 120px;
+		background: #fbffbe;
+		padding: 1rem;
+		box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.15);
+		font-family: var(--font-body);
+		font-size: 10px;
+		color: var(--text-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		transform: rotate(-2deg);
+	}
+
+	.note-1 {
+		transform: rotate(-4deg);
+	}
+
+	.note-2 {
+		transform: rotate(2deg);
+		margin-left: 20px;
+	}
+
+	.note-3 {
+		transform: rotate(-1deg);
+		margin-left: -10px;
+	}
+
 	button {
 		margin-top: 1rem;
 		padding: 0.8rem 1.8rem;
 		font-family: var(--font-heading);
 		background-color: var(--color-button);
+		border-radius: 15px;
 		font-size: 1.1rem;
 		cursor: pointer;
 		color: white;
@@ -296,6 +370,15 @@
 			font-size: 1rem;
 		}
 
+		.intro-board {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.sticky-notes {
+			display: none;
+		}
+
 		button {
 			width: 100%;
 			max-width: 220px;
@@ -347,11 +430,6 @@
 			gap: 0.4rem;
 		}
 
-		.circle-shape {
-			width: 150px;
-			height: 150px;
-		}
-
 		.circle span {
 			font-size: 0.85rem;
 		}
@@ -380,8 +458,6 @@
 	/* Further adjustments for very small screens */
 	@media (max-width: 480px) {
 		.links-container {
-			transform: scale(0.8);
-			transform-origin: center;
 			height: 400px;
 		}
 
