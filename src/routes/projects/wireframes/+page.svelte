@@ -44,13 +44,13 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-        font-family: var(--font-button);
+		font-family: var(--font-button);
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 		transition: transform 0.2s ease;
 	}
 
 	.card:hover {
 		transform: translateY(-5px);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
 	}
 </style>

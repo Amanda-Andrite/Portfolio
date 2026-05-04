@@ -1,5 +1,6 @@
 <script>
 	import { resolve } from '$app/paths';
+	import { contactInfoOpen } from '$lib/stores/contact.js';
 </script>
 
 <svelte:head>
@@ -18,7 +19,7 @@
 				My websites dont just look good, they perform. From concept to launch, I craft experiences
 				that are intuitive, responsive, and built to last.
 			</p>
-			<button>Contact Me</button>
+			<button on:click={() => contactInfoOpen.set(true)}> Contact Me </button>
 		</header>
 	</section>
 
@@ -299,7 +300,7 @@
 			width: 100%;
 			max-width: 220px;
 		}
-	
+
 		/* about section */
 		.about-container {
 			flex-direction: column;
@@ -339,7 +340,7 @@
 		.links-container {
 			transform: scale(0.8);
 			transform-origin: center;
-			height: 400px; 
+			height: 400px;
 		}
 
 		.circle {
@@ -381,7 +382,7 @@
 		.links-container {
 			transform: scale(0.8);
 			transform-origin: center;
-			height: 400px; 
+			height: 400px;
 		}
 
 		.circle {

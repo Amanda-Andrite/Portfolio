@@ -1,11 +1,13 @@
 <script>
 	import Header from '$lib/Header.svelte';
 	import Footer from '$lib/Footer.svelte';
+	import ContactModal from '$lib/ContactModal.svelte';
 </script>
 
 <div id="layout-container">
 	<!-- Header -->
 	<Header />
+	<ContactModal />
 
 	<!-- Page Content -->
 	<main id="main-content" tabindex="-1">

@@ -1,12 +1,13 @@
 <script>
 	import { resolve } from '$app/paths';
+	import { contactInfoOpen } from '$lib/stores/contact.js';
 </script>
 
 <header class="header">
 	<nav class="nav-bar">
 		<div class="nav-left">
 			<a href={resolve('/skills')}>My Skills</a>
-			<a href={resolve('/contact')}>Contacts</a>
+			<a href="#top" on:click|preventDefault={() => contactInfoOpen.set(true)}> Contacts </a>
 		</div>
 		<div class="logo">
 			<a href={resolve('/')}>Logo</a>
@@ -64,7 +65,7 @@
 			gap: 4rem;
 			padding: 0.8rem 1.2rem;
 		}
-		
+
 		.nav-left,
 		.nav-right {
 			gap: 1rem;
