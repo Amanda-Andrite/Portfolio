@@ -1,9 +1,24 @@
 <script>
 	import { base } from '$app/paths';
 	let items = [
-		{ title: 'Wireframes & UX', type: 'left', link: '/projects/wireframes' },
-		{ title: 'Concept Art & Worlds', type: 'center', link: '/projects/concept' },
-		{ title: '3D Exploration', type: 'right', link: '/projects/models' }
+		{
+			title: 'Wireframes & UX',
+			type: 'left',
+			link: '/projects/wireframes',
+			image: '/imgs/wireframing.jpg'
+		},
+		{
+			title: 'Concept Art & Worlds',
+			type: 'center',
+			link: '/projects/concept',
+			image: '/imgs/concepts.jpg'
+		},
+		{
+			title: '3D Exploration',
+			type: 'right',
+			link: '/projects/models',
+			image: '/imgs/3dwork.jpg'
+		}
 	];
 </script>
 
@@ -13,7 +28,9 @@
 		{#each items as item}
 			<a class="link" href="{base}{item.link}">
 				<div class="polaroid {item.type}">
-					<div class="frame"></div>
+					<div class="frame">
+						<img class="work-image" src="{base}{item.image}" alt={item.title} />
+					</div>
 					<p>{item.title}</p>
 				</div>
 			</a>
@@ -28,6 +45,16 @@
 		background: var(--background-primary);
 		font-family: var(--font-body);
 		text-align: center;
+		background-image:
+			linear-gradient(rgba(0, 0, 0, 0.12) 2px, transparent 2px),
+			linear-gradient(90deg, rgba(0, 0, 0, 0.12) 2px, transparent 2px);
+		background-size: 50px 50px;
+		border: 2px solid var(--background-tertiary);
+		border-radius: 12px;
+		max-width: 1300px;
+		margin: 2rem auto;
+		position: relative;
+		overflow: hidden;
 	}
 
 	h1 {
@@ -58,10 +85,14 @@
 		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 	}
 
-	.frame {
-		background: var(--background-tertiary);
-		padding: 0.5rem;
+	.work-image {
+		width: 100%;
+		max-width: 450px;
 		height: 250px;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		border: 2px solid var(--background-tertiary);
+		border-radius: var(--card-radius);
 	}
 
 	p {
@@ -89,6 +120,11 @@
 	}
 
 	@media (max-width: 768px) {
+		.page {
+			max-width: 100%; 
+			margin: 1rem 0; 			
+		}
+
 		.grid {
 			flex-direction: column;
 			align-items: center;
@@ -119,6 +155,10 @@
 
 		.polaroid:hover {
 			transform: translateY(-6px);
+		}
+
+		.work-image {
+			height: 210px;
 		}
 	}
 </style>

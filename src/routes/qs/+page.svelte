@@ -1,12 +1,24 @@
 <script>
 	// @ts-nocheck
 	let qa = [
-		{ question: 'question1', answer: '----- Text -----', open: false },
-		{ question: 'question2', answer: '----- Text -----', open: false },
-		{ question: 'question3', answer: '----- Text -----', open: false },
-		{ question: 'question4', answer: '----- Text -----', open: false },
-		{ question: 'question5', answer: '----- Text -----', open: false },
-		{ question: 'question6', answer: '----- Text -----', open: false }
+		{
+			question: 'What kind of work do you focus on?',
+			answer:
+				'I mainly explore wireframing, UX thinking, concept art, and 3D visuals. I like moving between early ideas and more developed visual direction.',
+			open: false
+		},
+		{
+			question: 'How would you describe your design style?',
+			answer:
+				'Clean, structured, and calm. I try to avoid anything that feels overwhelming and instead focus on clarity and flow.',
+			open: false
+		},
+		{
+			question: 'What tools do you use?',
+			answer:
+				'I switch between design and 3D tools depending on the project. I like using whatever best helps me communicate the idea clearly.',
+			open: false
+		},
 	];
 
 	function toggle(index) {
@@ -24,11 +36,11 @@
 					<span>{item.question}</span>
 					<span class="icon">{item.open ? '-' : '+'}</span>
 				</button>
-				{#if item.open}
+				<div class="answer-wrap {item.open ? 'open' : ''}">
 					<div class="answer">
 						{item.answer}
 					</div>
-				{/if}
+				</div>
 			</div>
 		{/each}
 	</div>
@@ -79,17 +91,38 @@
 		border: none;
 		width: 100%;
 		text-align: left;
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease;
+	}
+
+	.question:hover {
+		transform: scale(1.01);
+		box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 	}
 
 	.icon {
 		font-size: 1.5rem;
 	}
 
+	.answer-wrap {
+		max-height: 0;
+		overflow: hidden;
+		transform: translateY(-5px);
+		transition: transform 0.55s ease;
+	}
+
+	.answer-wrap.open {
+		max-height: 200px;
+		opacity: 1;
+		transform: translateY(0);
+		margin-top: 0rem;
+	}
+
 	.answer {
 		background: var(--background-secondary);
 		padding: var(--card-padding);
 		border-radius: var(--card-radius);
-		margin-top: 0;
 		color: var(--text-primary);
 	}
 

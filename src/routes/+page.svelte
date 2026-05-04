@@ -255,7 +255,8 @@
 		flex: 1;
 		align-items: center;
 		justify-content: center;
-		gap: 0.5rem;
+		gap: 1rem;
+		justify-content: flex-start;
 	}
 
 	.about-title {
@@ -273,7 +274,6 @@
 	.about-card {
 		width: 100%;
 		max-width: 500px;
-		height: 430px;
 		min-height: 250px;
 		background-color: var(--background-primary);
 		padding: 1rem;
@@ -415,7 +415,7 @@
 			display: none;
 		}
 
-		.contact-btn {
+		button {
 			width: 100%;
 			max-width: 220px;
 		}
@@ -449,9 +449,17 @@
 
 		.about-card {
 			order: 2;
-			width: min(450px, 70vw);
-			height: 375px;
+			width: 100%;
+			max-width: 100%;
 			padding: 1rem;
+		}
+
+		.about-text {
+			font-size: 15px;
+		}
+
+		.about-container {
+			padding: 0 1rem;
 		}
 
 		.about-title {
