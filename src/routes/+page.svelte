@@ -1,5 +1,6 @@
 <script>
 	import { resolve } from '$app/paths';
+	import { base } from '$app/paths';
 	import { contactInfoOpen } from '$lib/stores/contact.js';
 </script>
 
@@ -14,14 +15,17 @@
 				<header class="intro-content">
 					<h1>Meet the creative mind behind the screen.</h1>
 					<p>
-						I design and develop websites that balance aesthetics with functionality, bringing bold
-						ideas to life through purposeful design and clean, efficient code.
+						I like turning ideas into visuals, whether that’s rough wireframes, concept art, or 3D.
+						It’s all about figuring things out visually and shaping the direction early on.
 					</p>
 					<p>
-						My websites dont just look good, they perform. From concept to launch, I craft
-						experiences that are intuitive, responsive, and built to last.
+						From simple sketches to more detailed 3D work, I use design to explore how things could
+						look and work before they’re built, keeping everything clear and intentional.
 					</p>
-					<button on:click={() => contactInfoOpen.set(true)}> Contact Me </button>
+					<button class="contact-btn" on:click={() => contactInfoOpen.set(true)}>
+						Contact Me
+						<img class="whatsapp-icon" src="{base}/icons/whatsapp.png" alt="WhatsApp" />
+					</button>
 				</header>
 			</div>
 			<div class="sticky-notes">
@@ -38,13 +42,21 @@
 	<section class="about" aria-labelledby="about-title">
 		<div class="about-container">
 			<div class="about-image">
-				<div class="image-placeholder"></div>
+				<img class="profile-image" src="{base}/profile.jpg" alt="Profile" />
 			</div>
 
 			<article class="about-content">
 				<h2 id="about-title" class="about-title">ABOUT ME</h2>
 				<div class="about-card">
-					<p class="about-text">Hello</p>
+					<p class="about-text">
+						I’m Amanda Andrite. I grew up always designing, planning, and organising anything I
+						could get my hands on. I naturally leaned towards creating order and clarity.
+					</p>
+					<p class="about-text">
+						I care a lot about design, especially creating things that don’t feel overwhelming or
+						strained. I’m drawn to making work that feels calm, clear, and easy to move through.
+						Over time, that turned into a real passion.
+					</p>
 					<p class="about-email">@email.com</p>
 				</div>
 			</article>
@@ -57,19 +69,27 @@
 	<section class="links">
 		<div class="links-container">
 			<a href={resolve('/skills')} class="circle circle-1" aria-label="Go to My Skills page">
-				<div class="circle-shape"></div>
+				<div class="circle-shape"><img src="{base}/icons/skills.png" alt="Skills icon" /></div>
 				<span>My Skills</span>
 			</a>
-			<a href={resolve('/contact')} class="circle circle-2" aria-label="Go to Contact page">
-				<div class="circle-shape"></div>
+			<button
+				type="button"
+				on:click={() => contactInfoOpen.set(true)}
+				class="circle circle-2"
+				aria-label="Open Contact modal"
+			>
+				<div class="circle-shape">
+					<img src="{base}/icons/contact.png" alt="Contact icon" />
+				</div>
 				<span>Contacts</span>
-			</a>
+			</button>
+
 			<a href={resolve('/work')} class="circle circle-3" aria-label="Go to My Work page">
-				<div class="circle-shape"></div>
+				<div class="circle-shape"><img src="{base}/icons/work.png" alt="Work icon" /></div>
 				<span>My Work</span>
 			</a>
 			<a href={resolve('/qs')} class="circle circle-4" aria-label="Go to Q/A page">
-				<div class="circle-shape"></div>
+				<div class="circle-shape"><img src="{base}/icons/qa.png" alt="QA icon" /></div>
 				<span>Q/A</span>
 			</a>
 		</div>
@@ -131,12 +151,32 @@
 		font-size: 1.2rem;
 	}
 
+	.contact-btn {
+		margin-top: 1rem;
+		padding: 0.8rem 1.8rem;
+		font-family: var(--font-heading);
+		background-color: var(--color-button);
+		border-radius: 15px;
+		font-size: 1.1rem;
+		cursor: pointer;
+		color: white;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+	}
+
+	.whatsapp-icon {
+		width: 40px;
+		height: 40px;
+		object-fit: contain;
+	}
+
 	.sticky-notes {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		z-index: 5;
-		margin-top: 2rem; 
+		margin-top: 2rem;
 		margin-left: 1.5rem;
 	}
 
@@ -170,17 +210,6 @@
 		margin-left: -10px;
 	}
 
-	button {
-		margin-top: 1rem;
-		padding: 0.8rem 1.8rem;
-		font-family: var(--font-heading);
-		background-color: var(--color-button);
-		border-radius: 15px;
-		font-size: 1.1rem;
-		cursor: pointer;
-		color: white;
-	}
-
 	.primary-divider {
 		height: 30px;
 		background-color: var(--divider-color);
@@ -211,24 +240,13 @@
 		flex-wrap: wrap;
 	}
 
-	.image-placeholder {
+	.profile-image {
 		width: 450px;
 		height: 580px;
-		aspect-ratio: 3 / 4;
+		object-fit: cover;
 		border-radius: var(--card-radius);
 		background: var(--background-tertiary);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-		overflow: hidden;
-	}
-
-	.image-placeholder::after {
-		content: 'IMAGE';
-		color: var(--color-white);
-		font-family: var(--font-heading);
-		font-size: 2rem;
+		box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.15);
 	}
 
 	.about-content {
@@ -255,19 +273,21 @@
 	.about-card {
 		width: 100%;
 		max-width: 500px;
-		height: 450px;
+		height: 430px;
 		min-height: 250px;
 		background-color: var(--background-primary);
-		padding: 0.8rem;
+		padding: 1rem;
 		border-radius: var(--card-radius);
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		margin: 0 auto;
+		text-align: center;
 	}
 
 	.about-text {
 		font-family: var(--font-body);
+		font-size: 17px;
 		color: var(--text-primary);
 	}
 
@@ -304,6 +324,10 @@
 		cursor: pointer;
 		text-decoration: none;
 		color: inherit;
+		background: none;
+		border: none;
+		padding: 0;
+		font: inherit;
 	}
 
 	.circle-shape {
@@ -313,6 +337,18 @@
 		border: 3px solid #5a4634;
 		background-color: transparent;
 		transition: transform 0.2s ease;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	.circle-shape img {
+		width: 55%;
+		height: 55%;
+		object-fit: contain;
+		pointer-events: none;
 	}
 
 	.circle:hover .circle-shape {
@@ -379,7 +415,7 @@
 			display: none;
 		}
 
-		button {
+		.contact-btn {
 			width: 100%;
 			max-width: 220px;
 		}
@@ -402,11 +438,15 @@
 			gap: 1rem;
 		}
 
-		.image-placeholder {
-			max-width: 350px;
+		.profile-image {
 			width: 100%;
-			height: 375px;
+			max-width: 450px;
+			height: auto;
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			border-radius: var(--card-radius);
 		}
+
 		.about-card {
 			order: 2;
 			width: min(450px, 70vw);
