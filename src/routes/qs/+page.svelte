@@ -4,11 +4,11 @@
 		{
 			question: 'What kind of work do you focus on?',
 			answer:
-				'I mainly explore wireframing, UX thinking, concept art, and 3D visuals. I like moving between early ideas and more developed visual direction.',
+				'I mainly explore wireframing, concept art, and occasioanlly 3D visuals. I enjoy creating immersive experiences and exploring new ways to communicate ideas through design, which is why I feel in love with designing wireframes and creating design concepts that are both modern and visually appealing, whilst keeping designs up to date.',
 			open: false
 		},
 		{
-			question: 'How would you describe your design style?',
+			question: 'How would you describe your design style in Wireframing?',
 			answer:
 				'Clean, structured, and calm. I try to avoid anything that feels overwhelming and instead focus on clarity and flow.',
 			open: false
@@ -16,7 +16,7 @@
 		{
 			question: 'What tools do you use?',
 			answer:
-				'I switch between design and 3D tools depending on the project. I like using whatever best helps me communicate the idea clearly.',
+				'I switch between design and 3D tools depending on the project. I like using whatever best helps me communicate the idea clearly. For wireframing, I use Figma or Penpot. For concept art, I use Krita. For 3D visuals, Ive grown fond of Blender, but have dabbled in using Maya.',
 			open: false
 		},
 	];

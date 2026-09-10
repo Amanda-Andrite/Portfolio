@@ -24,15 +24,6 @@
 			</div>
 		{/each}
 	</div>
-	<div class="section-divider"></div>
-	<section class="qualifications">
-		<h2>Qualifications</h2>
-		<div class="divider"></div>
-
-		<div class="qualification-list">
-			<div class="qualification-box">Game Design: Practical Unity Development - FutureLearn</div>
-		</div>
-	</section>
 </section>
 
 <style>
@@ -40,11 +31,6 @@
 		background: var(--background-primary);
 		padding: var(--space-sm) 0;
 		text-align: center;
-	}
-
-	.qualifications {
-		background: var(--background-secondary);
-		padding: var(--space-md);
 	}
 
 	h2 {
@@ -114,27 +100,6 @@
 		text-align: center;
 		font-size: var(--font-md);
 		margin-top: var(--space-sm);
-	}
-
-	.section-divider {
-		height: 30px;
-		background-color: var(--divider-color);
-		margin: 0;
-	}
-
-	.qualification-list {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-		align-items: center;
-	}
-
-	.qualification-box {
-		background: white;
-		padding: 10px 15px;
-		border-radius: 8px;
-		width: 60%;
-		text-align: center;
 	}
 
 	@media (max-width: 600px) {
