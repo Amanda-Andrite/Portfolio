@@ -14,9 +14,7 @@
 			their tasks efficiently. The application allows users to add, edit, complete, and delete tasks
 			through a simple and intuitive interface.
 		</p>
-	</section>
-
-	<section class="project-info">
+	
 		<div>
 			<h2>Purpose for Project</h2>
 			<p>
@@ -103,7 +101,7 @@
 
 	.back {
 		display: inline-block;
-		margin-bottom: 25px;
+		margin-bottom: 50px;
 		color: var(--text-primary);
 		text-decoration: none;
 		font-family: var(--font-button);
@@ -115,9 +113,9 @@
 
 	h1 {
 		font-family: var(--font-heading);
-		font-size: 4rem;
+		font-size: 3rem;
 		text-align: center;
-		margin: 0 0 45px 0;
+		margin: 0 0 25px 0;
 	}
 
 	.section {
@@ -166,16 +164,6 @@
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 	}
 
-	.project-info {
-		max-width: 900px;
-		margin: 0 auto;
-		padding: 50px 0;
-		border-top: 2px solid var(--divider);
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 60px;
-	}
-
 	.tools {
 		display: flex;
 		gap: 15px;
@@ -205,11 +193,6 @@
 
 		.image-grid {
 			grid-template-columns: 1fr;
-		}
-
-		.project-info {
-			grid-template-columns: 1fr;
-			gap: 30px;
 		}
 	}
 </style>
