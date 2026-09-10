@@ -11,7 +11,7 @@
 		on:click={() => contactInfoOpen.set(false)}
 		on:keydown={(e) => e.key === 'Escape' && contactInfoOpen.set(false)}
 	>
-	<!--Actual Popup of contact card-->
+		<!--Actual Popup of contact card-->
 		<div
 			class="modal"
 			role="dialog"
@@ -22,11 +22,8 @@
 		>
 			<h2>Contact Info</h2>
 			<h3>Amanda Andrite</h3>
-			<p><strong>Email:</strong> email@email.com</p>
-			<p><strong>Phone:</strong> +number</p>
-			<p><strong>Insta:</strong> email@email.com</p>
-			<p><strong>Twitter:</strong> email@email.com</p>
-			<p><strong>LinkedIn:</strong> email@email.com</p>
+			<p><strong>Email:</strong> aamanda2626@gmail.com</p>
+			<p><strong>Phone:</strong> (087) 428 4558</p>
 			<button on:click={() => contactInfoOpen.set(false)}> Close </button>
 		</div>
 	</div>

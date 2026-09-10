@@ -8,11 +8,8 @@
 			<img src="{base}/icons/logo1.png" alt="Logo" class="footer-logo" />
 
 			<div class="contact">
-				<p><strong>Email:</strong> email@email.com</p>
-				<p><strong>Phone:</strong> +number</p>
-				<p><strong>Insta:</strong> email@email.com</p>
-				<p><strong>Twitter:</strong> email@email.com</p>
-				<p><strong>LinkedIn:</strong> email@email.com</p>
+				<p><strong>Email:</strong> aamanda2626@gmail.com</p>
+				<p><strong>Phone:</strong> (087) 428 4558</p>
 			</div>
 		</div>
 	</div>
