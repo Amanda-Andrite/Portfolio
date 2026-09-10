@@ -1,4 +1,5 @@
 <script>
+	import { resolve } from '$app/paths';
 	let items = ['Project 1', 'Project 2', 'Project 3', 'Project 4', 'Project 5', 'Project 6'];
 </script>
 
@@ -6,9 +7,9 @@
 	<h1>Wireframes & UX</h1>
 	<div class="grid">
 		{#each items as item}
-			<div class="card">
+			<a href={resolve('/projects/wireframes/project-1')} class="card">
 				{item}
-			</div>
+			</a>
 		{/each}
 	</div>
 </div>
