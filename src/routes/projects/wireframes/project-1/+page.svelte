@@ -1,5 +1,5 @@
 <script>
-	import { resolve } from '$app/paths';
+	import { resolve, base } from '$app/paths';
 </script>
 
 <div class="page">
@@ -14,12 +14,13 @@
 			their tasks efficiently. The application allows users to add, edit, complete, and delete tasks
 			through a simple and intuitive interface.
 		</p>
-	
+
 		<div>
 			<h2>Purpose for Project</h2>
 			<p>
 				This project was created as part of my college coursework for a Wireframing module, focusing
-				on the planning and development of a user-friendly application interface on both Desktop and Mobile.
+				on the planning and development of a user-friendly application interface on both Desktop and
+				Mobile.
 			</p>
 		</div>
 
@@ -34,8 +35,12 @@
 
 	<!-- User Journey -->
 	<section class="section">
-		<h2>User Journey</h2>
-		<div class="image-large"></div>
+		<h1>User Journey</h1>
+		<img
+			src={`${base}/imgs/FlowDiagram.drawio1.png`}
+			alt="User journey flow diagram for the To-Do List App"
+			class="image-large"
+		/>
 	</section>
 
 	<!--Low Fidelity -->
@@ -57,9 +62,43 @@
 	<section class="section">
 		<h2>Medium-Fidelity Wireframes</h2>
 		<div class="image-grid">
-			<div class="image-placeholder"></div>
-			<div class="image-placeholder"></div>
-			<div class="image-placeholder"></div>
+			<img
+				src={`${base}/imgs/lowFidelity_Desktop_SignUp.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="image-large"
+			/>
+			<img
+				src={`${base}/imgs/lowFidelity_Desktop_Homepage.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="image-large"
+			/>
+			<img
+				src={`${base}/imgs/lowFidelity_Desktop_Board.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="image-large"
+			/>
+		</div>
+		<div class="mobile-grid">
+			<img
+				src={`${base}/imgs/lowFidelity_Mobile_SignUp.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="mobile-image"
+			/>
+			<img
+				src={`${base}/imgs/lowFidelity_Mobile_Homepage.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="mobile-image"
+			/>
+			<img
+				src={`${base}/imgs/lowFidelity_Mobile_Board.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="mobile-image"
+			/>
+			<img
+				src={`${base}/imgs/lowFidelity_Mobile_Panel.png`}
+				alt="User journey flow diagram for the To-Do List App"
+				class="mobile-image"
+			/>
 		</div>
 	</section>
 
@@ -125,7 +164,7 @@
 
 	h2 {
 		font-family: var(--font-heading);
-		font-size: 2.2rem;
+		font-size: 1.8rem;
 		margin: 0 0 15px 0;
 	}
 
@@ -136,17 +175,41 @@
 	}
 
 	.image-large {
-		width: 100%;
-		min-height: 350px;
+		width: 65%;
+		height: auto;
+		display: block;
+		margin: 0 auto;
 		background: white;
 		border-radius: var(--card-radius);
 		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+	}
+
+	.image-grid .image-large {
+		width: 105%;
 	}
 
 	.image-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: var(--gap-lg);
+	}
+
+	.mobile-grid {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 30px;
+		margin-top: 40px;
+		flex-wrap: wrap;
+	}
+
+	.mobile-image {
+		width: 150px;
+		height: auto;
+		display: block;
+		background: white;
+		border-radius: var(--card-radius);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
 	}
 
 	.image-placeholder {
